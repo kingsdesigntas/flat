@@ -1,0 +1,258 @@
+/* General Styling */
+:root {
+ --heading-font: "Assistant",
+ serif;
+ --body-font: "Assistant",
+ sans;
+ font-family: var(--body-font);
+ --gray-50: #F4F2F1;
+ --gray-100: #E2E0DF;
+ --gray-200: #CAC5C4;
+ --gray-300: #B1A1A9;
+ --gray-400: #B1A1A9;
+ --gray-500: #99918F;
+ --gray-600: #817774;
+ --gray-700: #4B4644;
+ --gray-800: #665E5C;
+ --gray-900: #161312;
+ --primary-50: #EEF4F7;
+ --primary-100: #DDE8EE;
+ --primary-200: #BBD2DD;
+ --primary-300: #99BBCC;
+ --primary-400: #77A4BB;
+ --primary-500: #548EAB;
+ --primary-600: #447188;
+ --primary-700: #325465;
+ --primary-800: #223944;
+ --primary-900: #192B33;
+ --width-small: 36rem;
+ --width-medium: 48rem;
+ --width-large: 60rem;
+ --width-xlarge: 80rem;
+}
+
+.flow>*+* {
+    margin-top: var(--flow, 2rem);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    background: var(--primary-800);
+    color: white;
+    width: max-content;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:active,
+.btn:hover,
+.btn:focus {
+    background: var(--primary-700);
+}
+
+.edit-post-visual-editor > .editor-styles-wrapper {
+    padding: 0!important;
+   
+}
+
+.is-root-container h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+/* Set Block widths */
+.wp-block {
+    max-width: 48rem;
+}
+
+[data-type="genesis-custom-blocks/user-card"],
+[data-align="wide"],
+[data-title="Post Grid"] {
+    max-width: 80rem;
+}
+
+.alignwide {
+    max-width: var(--width-xlarge);
+    width: 90vw;
+}
+
+[data-type="genesis-custom-blocks/banner-block"] {
+    max-width: 100%;
+}
+
+[data-type="genesis-custom-blocks/banner-block"].is-selected,
+[data-title="Post Grid"].is-selected {
+    max-width: 60rem;
+}
+
+.editor-styles-wrapper {
+    margin: 0;
+}
+
+/* Style General page area */
+.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+    margin: 0 auto 28px;
+}
+
+.editor-post-title::before {
+    content: 'This is the post title used for reference in the backend. It will not be displayed on the frontend. Content displayed on the page starts below the "Site Header" indicator.';
+    padding: 1rem;
+    border: 1px solid red;
+    margin-top: 2rem;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.editor-post-title {
+    /* display: none; */
+    background: #f0f0f0;
+    padding: 0.5rem 2rem;
+    border: #f3f3f3;
+}
+
+.block-editor-block-list__layout.is-root-container::before {
+    content: 'Site Header';
+    display: block;
+    background-color: #123;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    margin-bottom: 6rem;
+}
+
+.block-editor-block-list__layout.is-root-container::after {
+    content: 'Site Footer';
+    display: block;
+    background-color: #123;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    margin-top: 6rem;
+}
+
+.is-root-container > p,h1,h2,h3,h4,h5,h6 {
+    margin: 0 auto;
+}
+
+.is-root-container > *+* {
+    margin-top: 2rem!important;
+}
+
+/* Top of Page Blocks */
+[data-type="genesis-custom-blocks/banner-block"]:first-child {
+    margin-top: -6rem;
+}
+
+/* Margins */
+[data-type="core/separator"] {
+    margin-top: 4rem!important;
+    margin-bottom: 4rem !important;
+}
+
+/* Fixes */
+.post-grid-block>ul {
+    list-style: none!important;
+}
+
+
+
+
+
+
+
+
+
+
+/* Font Imports */
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant Light'), local('Assistant-Light'),
+        url('./fonts/Assistant-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant ExtraBold'), local('Assistant-ExtraBold'),
+        url('./fonts/Assistant-ExtraBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant ExtraLight'), local('Assistant-ExtraLight'),
+        url('./fonts/Assistant-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant Bold'), local('Assistant-Bold'),
+        url('./fonts/Assistant-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant Medium'), local('Assistant-Medium'),
+        url('./fonts/Assistant-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant Regular'), local('Assistant-Regular'),
+        url('./fonts/Assistant-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: local('Assistant SemiBold'), local('Assistant-SemiBold'),
+        url('./fonts/Assistant-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2rem, 1.6vw + 1.5rem, 2.7rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 1.3vw + 1.3rem, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+}
+
+p {
+    line-height: 1.8;
+}

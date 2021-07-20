@@ -1,0 +1,33 @@
+.banner-block {
+    display: grid;
+    grid-template: 'banner';
+    place-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    margin: 4rem auto;
+}
+
+.banner-block > * {
+    grid-area: banner;
+    position: relative;
+}
+
+.banner-block-overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-block img {
+    object-fit: cover;
+    object-position: var(--focus, center);
+    position: absolute;
+    height: 100%;
+}
+
+.banner-block-content {
+    width: 90vw;
+    margin: auto;
+    padding: 4rem 0;
+}

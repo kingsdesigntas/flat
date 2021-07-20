@@ -1,0 +1,18 @@
+.user-card-block {
+    box-shadow: 0px 4px 12px 4px rgba(0,0,0, 0.12);
+    padding: 1.5rem;
+    display: grid;
+    gap: 3rem;
+    max-width: 80rem;
+    margin: 4rem auto;
+}
+
+@media screen and (min-width: 48rem) {
+    .user-card-block {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.user-card-block > div {
+    align-self: center;
+}
