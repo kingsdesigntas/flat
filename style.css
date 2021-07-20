@@ -246,6 +246,7 @@ padding: 1.5rem 0;
 
 .menu-item {
     list-style: none;
+    position: relative;
 }
 
 .menu-item>a {
@@ -255,6 +256,34 @@ padding: 1.5rem 0;
 
 .menu-item>a:hover,a:active {
     text-decoration: underline 1px solid var(--primary-200);
+}
+
+.sub-menu {
+        position: absolute;
+        visibility: hidden;
+        z-index: 1;
+        background: var(--primary-900);
+        min-width: 15ch;
+        width: max-content;
+        padding: 1rem;
+        transform: translateX(-50%);
+        left: 50%;
+        top: calc(100% + 1.25rem);
+        text-align: center;
+        opacity: 0;
+}
+
+.sub-menu>*+* {
+    margin-top: 0.75rem;
+}
+
+a[aria-expanded="true"] {
+    color: red;
+}
+
+.sub-menu:focus-within {
+    visibility: visible;
+    opacity: 1;
 }
 
 .entry-content {
