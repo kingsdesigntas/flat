@@ -176,6 +176,7 @@ End Font Imports
     --primary-700: #325465;
     --primary-800: #223944;
     --primary-900: #192B33;
+    --content-width: 90vw;
     --width-small: 36rem;
     --width-medium: 48rem;
     --width-large: 60rem;
@@ -244,7 +245,7 @@ End General Typography
 }
 
 .header-content, .footer-content {
-width: 90vw;
+width: var(--content-width);
 padding: 1.5rem 0;
 }
 
@@ -336,7 +337,7 @@ End Header
 
 .entry-content > * {
     max-width: var(--width-medium);
-    width: 90vw;
+    width: var(--content-width);
     margin-left: auto;
     margin-right: auto;
 }
@@ -377,22 +378,22 @@ End Areas
 
 .alignsmall {
     max-width: var(--width-small);
-    width: 90vw;
+    width: var(--content-width);
 }
 
 .alignmedium {
     max-width: var(--width-medium);
-    width: 90vw;
+    width: var(--content-width);
 }
 
 .alignlarge {
     max-width: var(--width-large);
-    width: 90vw;
+    width: var(--content-width);
 }
 
 .alignwide {
     max-width: var(--width-xlarge);
-    width: 90vw;
+    width: var(--content-width);
 }
 
 .alignfull {

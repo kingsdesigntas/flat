@@ -1,0 +1,34 @@
+.inner-content-section {
+    padding: 6rem 0;
+}
+.inner-content-section > * {
+    max-width: var(--width-medium);
+    width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inner-content-section > .alignsmall {
+    max-width: var(--width-small);
+    width: var(--content-width);
+}
+
+.inner-content-section > .alignmedium {
+    max-width: var(--width-medium);
+    width: var(--content-width);
+}
+
+.inner-content-section > .alignlarge {
+    max-width: var(--width-large);
+    width: var(--content-width);
+}
+
+.inner-content-section > .alignwide {
+    max-width: var(--width-xlarge);
+    width: var(--content-width);
+}
+
+.inner-content-section > .alignfull {
+    max-width: var(--width-full);
+    width: 100%;
+}
