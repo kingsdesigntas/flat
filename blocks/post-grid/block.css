@@ -17,10 +17,10 @@
     border-left: 0.25rem solid var(--primary-700);
 }
 
-.post-grid-item:first-of-type {
+/* .post-grid-item:first-of-type {
     border-color: var(--primary-400);
     grid-column: span 2;
-}
+} */
 
 /* .post-grid-item {
     display: none;
