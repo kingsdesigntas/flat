@@ -1,5 +1,5 @@
 <?php $image = block_value('image') ?>
-<div class="user-card-block <?php block_field('className'); ?>">
+<div class="user-card-block alignwide flow-space-lg <?php block_field('className'); ?>">
     <div>
         <?php echo wp_get_attachment_image($image, 'full') ?>
     </div>

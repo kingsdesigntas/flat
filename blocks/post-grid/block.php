@@ -4,7 +4,7 @@ $type = block_value('post-type');
 $the_query = new WP_Query( array( 'post_type' => $type, 'posts_per_page' => $limit ) );
 ?>
 
-<div class="post-grid-block <?php block_field('className');?>">
+<div class="post-grid-block alignwide flow-space-lg <?php block_field('className');?>">
     <?php
  // The Loop
 if ( $the_query->have_posts() ) {

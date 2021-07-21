@@ -1,8 +1,3 @@
-.post-grid-block {
-    max-width: 80rem;
-    margin: 4rem auto;
-}
-
 .post-grid-block > ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

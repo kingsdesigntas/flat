@@ -3,10 +3,7 @@
     grid-template: 'banner';
     place-items: center;
     overflow: hidden;
-    width: 100%;
-    max-width: 100vw;
     position: relative;
-    margin: 4rem auto;
 }
 
 .banner-block > * {

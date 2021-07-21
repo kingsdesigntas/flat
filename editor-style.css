@@ -1,172 +1,88 @@
-/* General Styling */
-:root {
- --heading-font: "Assistant",
- serif;
- --body-font: "Assistant",
- sans;
- font-family: var(--body-font);
- --gray-50: #F4F2F1;
- --gray-100: #E2E0DF;
- --gray-200: #CAC5C4;
- --gray-300: #B1A1A9;
- --gray-400: #B1A1A9;
- --gray-500: #99918F;
- --gray-600: #817774;
- --gray-700: #4B4644;
- --gray-800: #665E5C;
- --gray-900: #161312;
- --primary-50: #EEF4F7;
- --primary-100: #DDE8EE;
- --primary-200: #BBD2DD;
- --primary-300: #99BBCC;
- --primary-400: #77A4BB;
- --primary-500: #548EAB;
- --primary-600: #447188;
- --primary-700: #325465;
- --primary-800: #223944;
- --primary-900: #192B33;
- --width-small: 36rem;
- --width-medium: 48rem;
- --width-large: 60rem;
- --width-xlarge: 80rem;
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Reset
+*  2.0 - Fonts
+*  3.0 - Custom Properties
+*  4.0 - General Typography
+*  5.0 - Areas
+*    5.1 - Header
+*    5.2 - Entry Content
+* 6.0 - Utilities
+*  7.0 - Buttons
+*  8.0 - Gutenberg Conditionals
+*/
+
+/* ------------------------------------------------- 
+1.0 Reset
+------------------------------------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.flow>*+* {
-    margin-top: var(--flow, 2rem);
+/* Add default focus style */
+*:focus {
+    outline: 2px solid var(--primary-200);
 }
 
-.btn {
-    display: inline-block;
-    padding: 1rem;
-    background: var(--primary-800);
-    color: white;
-    width: max-content;
-    text-decoration: none;
-    font-weight: bold;
+/* Remove default padding */
+ul,
+ol {
+    padding: 0;
 }
 
-.btn:active,
-.btn:hover,
-.btn:focus {
-    background: var(--primary-700);
-}
-
-.edit-post-visual-editor > .editor-styles-wrapper {
-    padding: 0!important;
-   
-}
-
-.is-root-container h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-}
-
-/* Set Block widths */
-.wp-block {
-    max-width: 48rem;
-}
-
-[data-type="genesis-custom-blocks/user-card"],
-[data-align="wide"],
-[data-title="Post Grid"] {
-    max-width: 80rem;
-}
-
-.alignwide {
-    max-width: var(--width-xlarge);
-    width: 90vw;
-}
-
-[data-type="genesis-custom-blocks/banner-block"] {
-    max-width: 100%;
-}
-
-[data-type="genesis-custom-blocks/banner-block"].is-selected,
-[data-title="Post Grid"].is-selected {
-    max-width: 60rem;
-}
-
-.editor-styles-wrapper {
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
     margin: 0;
 }
 
-/* Style General page area */
-.edit-post-visual-editor__post-title-wrapper .editor-post-title {
-    margin: 0 auto 28px;
+/* Make images easier to work with */
+img {
+    width: 100%;
+    height: auto;
 }
 
-.editor-post-title::before {
-    content: 'This is the post title used for reference in the backend. It will not be displayed on the frontend. Content displayed on the page starts below the "Site Header" indicator.';
-    padding: 1rem;
-    border: 1px solid red;
-    margin-top: 2rem;
-    display: block;
-    font-style: italic;
-    font-weight: bold;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
 
-.editor-post-title {
-    /* display: none; */
-    background: #f0f0f0;
-    padding: 0.5rem 2rem;
-    border: #f3f3f3;
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
-.block-editor-block-list__layout.is-root-container::before {
-    content: 'Site Header';
-    display: block;
-    background-color: #123;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-weight: bold;
-    margin-bottom: 6rem;
-}
+/* ------------------------------------------------- 
+End Reset 
+------------------------------------------------- */
 
-.block-editor-block-list__layout.is-root-container::after {
-    content: 'Site Footer';
-    display: block;
-    background-color: #123;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-weight: bold;
-    margin-top: 6rem;
-}
-
-.is-root-container > p,h1,h2,h3,h4,h5,h6 {
-    margin: 0 auto;
-}
-
-.is-root-container > *+* {
-    margin-top: 2rem!important;
-}
-
-/* Top of Page Blocks */
-[data-type="genesis-custom-blocks/banner-block"]:first-child {
-    margin-top: -6rem;
-}
-
-/* Margins */
-[data-type="core/separator"] {
-    margin-top: 4rem!important;
-    margin-bottom: 4rem !important;
-}
-
-/* Fixes */
-.post-grid-block>ul {
-    list-style: none!important;
-}
-
-
-
-
-
-
-
-
-
-
-/* Font Imports */
+/* ------------------------------------------------- 
+2.0 Font Imports 
+------------------------------------------------- */
 @font-face {
     font-family: 'Assistant';
     src: local('Assistant Light'), local('Assistant-Light'),
@@ -230,7 +146,63 @@
     font-display: swap;
 }
 
-/* Typography */
+/* ------------------------------------------------- 
+End Font Imports 
+------------------------------------------------- */
+
+
+/* ------------------------------------------------- 
+3.0 Custom Properties
+------------------------------------------------- */
+:root {
+    --heading-font: 'Assistant', sans-serif;
+    --body-font: 'Assistant', sans-serif;
+    --gray-50: #F4F2F1;
+    --gray-100: #E2E0DF;
+    --gray-200: #CAC5C4;
+    --gray-300: #B1A1A9;
+    --gray-400: #B1A1A9;
+    --gray-500: #99918F;
+    --gray-600: #817774;
+    --gray-700: #4B4644;
+    --gray-800: #665E5C;
+    --gray-900: #161312;
+    --primary-50: #EEF4F7;
+    --primary-100: #DDE8EE;
+    --primary-200: #BBD2DD;
+    --primary-300: #99BBCC;
+    --primary-400: #77A4BB;
+    --primary-500: #548EAB;
+    --primary-600: #447188;
+    --primary-700: #325465;
+    --primary-800: #223944;
+    --primary-900: #192B33;
+    --width-small: 36rem;
+    --width-medium: 48rem;
+    --width-large: 60rem;
+    --width-xlarge: 80rem;
+    --width-full: 100vw;
+    --secondary-50: #FFFBF5;
+    --secondary-100: #FFEACC;
+    --secondary-200: #FFD699;
+    --secondary-300: #FFC166;
+    --secondary-400: #FFAC32;
+    --secondary-500: #FF9800;
+    --secondary-600: #CC7900;
+    --secondary-700: #995B00;
+    --secondary-800: #663D00;
+    --secondary-900: #331E00;
+    --spacing: 1rem;
+    font-family: var(--body-font);
+}
+
+/* ------------------------------------------------- 
+End Custom Properties
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+4.0 General Typography
+------------------------------------------------- */
 h1,
 h2,
 h3,
@@ -256,3 +228,363 @@ h3 {
 p {
     line-height: 1.8;
 }
+
+/* ------------------------------------------------- 
+End General Typography
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+5.0 Areas
+------------------------------------------------- */
+/* --------
+5.1 Header
+-------- */
+.theme-header,
+.theme-footer {
+    background: var(--primary-900);
+    color: white;
+    display: grid;
+    justify-content: center;
+}
+
+.header-content,
+.footer-content {
+    width: 90vw;
+    padding: 1.5rem 0;
+}
+
+.header-content {
+    max-width: 80rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.brand:hover,
+.brand:active {
+    color: var(--primary-200);
+}
+
+.brand>span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.35em;
+}
+
+#menu-primary_navigation {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-item {
+    list-style: none;
+    position: relative;
+}
+
+.menu-item>a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-item>a:hover,
+a:active {
+    text-decoration: underline 1px solid var(--primary-200);
+}
+
+.sub-menu {
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    background: var(--primary-900);
+    min-width: 15ch;
+    width: max-content;
+    padding: 1rem;
+    transform: translateX(-50%);
+    left: 50%;
+    top: calc(100% + 1.25rem);
+    text-align: center;
+    opacity: 0;
+}
+
+.sub-menu>*+* {
+    margin-top: 0.75rem;
+}
+
+a[aria-expanded="true"] {
+    color: red;
+}
+
+a[aria-expanded="true"]~.sub-menu {
+    visibility: visible;
+}
+
+.sub-menu:focus-within {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --------
+End Header
+-------- */
+/* --------
+5.2 Entry Content
+-------- */
+.entry-content {
+    padding: 6rem 0;
+}
+
+.entry-content>* {
+    max-width: var(--width-medium);
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------
+End Entry Content
+-------- */
+/* --------
+6.3 Footer
+-------- */
+
+/* --------
+Emd Footer
+-------- */
+/* ------------------------------------------------- 
+End Areas
+------------------------------------------------- */
+/* ------------------------------------------------- 
+6.0 Utilities
+------------------------------------------------- */
+.flow>*+* {
+    margin-top: var(--flow, 2rem);
+}
+
+.flow-space-sm {
+    margin-top: (var(--spacing));
+    margin-top: (var(--spacing));
+}
+
+.flow-space-lg {
+    margin-top: calc(var(--spacing) * 4);
+    margin-bottom: calc(var(--spacing) * 4);
+}
+
+.flow-space-xl {
+    margin-top: calc(var(--spacing) * 6);
+    margin-bottom: calc(var(--spacing) * 6);
+}
+
+.alignsmall {
+    max-width: var(--width-small);
+    width: 90vw;
+}
+
+.alignmedium {
+    max-width: var(--width-medium);
+    width: 90vw;
+}
+
+.alignlarge {
+    max-width: var(--width-large);
+    width: 90vw;
+}
+
+.alignwide {
+    max-width: var(--width-xlarge);
+    width: 90vw;
+}
+
+.alignfull {
+    max-width: var(--width-full);
+    width: 100%;
+}
+
+.has-text-align-center {
+    text-align: center;
+}
+
+.has-text-align-right {
+    text-align: right;
+}
+
+/* ------------------------------------------------- 
+End Utilities
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+7.0 Buttons
+------------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    background: var(--primary-800);
+    color: white;
+    width: max-content;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:active,
+.btn:hover,
+.btn:focus {
+    background: var(--primary-700);
+}
+
+/* ------------------------------------------------- 
+End Buttons
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+8.0 Gutenberg Conditionals
+------------------------------------------------- */
+.wp-block-separator {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Top of Page Blocks */
+.first-block-negative-margin:first-child {
+    margin-top: -6rem;
+}
+
+/* ------------------------------------------------- 
+End Gutenberg Conditionals
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+9.0 Gutenberg Display Control
+------------------------------------------------- */
+.is-root-container {
+    font-family: var(--body-font);
+}
+
+.is-root-container h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+/* --------
+Set Block Widths
+-------- */
+.wp-block {
+    max-width: var(--width-medium);
+}
+
+[data-title="User Card"],
+[data-title="Post Grid"], .alignwide {
+    max-width: var(--width-xlarge);
+    width: 90vw;
+}
+
+[data-title="Banner Block"] {
+    max-width: 100%;
+}
+/* --------
+End Set Block Widths
+-------- */
+
+/* --------
+Notice about Title & mock header/footer
+-------- */
+.editor-post-title::before {
+    content: 'This is the post title used for reference in the backend. It will not be displayed on the frontend. Content displayed on the page starts below the "Site Header" indicator.';
+    padding: 1rem;
+    border: 1px solid red;
+    margin-top: 2rem;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.editor-post-title {
+    /* display: none; */
+    background: #f0f0f0;
+    padding: 0.5rem 2rem;
+    border: #f3f3f3;
+}
+
+.block-editor-block-list__layout.is-root-container::before {
+    content: 'Site Header';
+    display: block;
+    background-color: var(--primary-900);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    margin-bottom: 6rem;
+}
+
+.block-editor-block-list__layout.is-root-container::after {
+    content: 'Site Footer';
+    display: block;
+    background-color: var(--primary-900);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    margin-top: 6rem;
+}
+/* --------
+End Notice about Title & mock header/footer
+-------- */
+
+/* --------
+Managing Content Flow
+-------- */
+.is-root-container>p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 auto;
+}
+
+.is-root-container>*+* {
+    margin-top: 2rem!important;
+}
+
+/* Top of Page Blocks */
+[data-type="genesis-custom-blocks/banner-block"]:first-child {
+    margin-top: -6rem;
+}
+/* --------
+End Managing Content Flow
+-------- */
+
+/* --------
+Fixes
+-------- */
+/* List Styling Added when it shouldn't be */
+.post-grid-block>ul {
+    list-style: none !important;
+}
+
+/* Genesis Custom Block Images being streteched */
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__img,
+.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__img,
+.gcb-editor .genesis-custom-blocks-media-controls .gcb-image__img {
+    width: auto!important;
+}
+/* --------
+End Fixes
+-------- */
+
+/* ------------------------------------------------- 
+End Gutenberg Display Control
+------------------------------------------------- */

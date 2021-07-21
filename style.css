@@ -1,4 +1,88 @@
-/* Font Imports */
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Reset
+*  2.0 - Fonts
+*  3.0 - Custom Properties
+*  4.0 - General Typography
+*  5.0 - Areas
+*    5.1 - Header
+*    5.2 - Entry Content
+* 6.0 - Utilities
+*  7.0 - Buttons
+*  8.0 - Gutenberg Conditionals
+*/
+
+/* ------------------------------------------------- 
+1.0 Reset
+------------------------------------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Add default focus style */
+*:focus {
+    outline: 2px solid var(--primary-200);
+}
+
+/* Remove default padding */
+ul,
+ol {
+    padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Make images easier to work with */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------------------------------------- 
+End Reset 
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+2.0 Font Imports 
+------------------------------------------------- */
 @font-face {
     font-family: 'Assistant';
     src: local('Assistant Light'), local('Assistant-Light'),
@@ -61,74 +145,14 @@
     font-style: normal;
     font-display: swap;
 }
+/* ------------------------------------------------- 
+End Font Imports 
+------------------------------------------------- */
 
 
-/* Resets */
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    transition: all 0.3s;
-}
-
-/* Add default focus style */
-
-*:focus {
-    outline: 2px solid var(--primary-200);
-}
-
-/* Remove default padding */
-ul,
-ol {
-    padding: 0;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-    margin: 0;
-}
-
-/* Make images easier to work with */
-img {
-    width: 100%;
-    height: auto;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* End Resets */
-
-/* Root */
+/* ------------------------------------------------- 
+3.0 Custom Properties
+------------------------------------------------- */
 :root {
     --heading-font: 'Assistant', sans-serif;
     --body-font: 'Assistant', sans-serif;
@@ -156,6 +180,7 @@ select {
     --width-medium: 48rem;
     --width-large: 60rem;
     --width-xlarge: 80rem;
+    --width-full: 100vw;
     --secondary-50: #FFFBF5;
     --secondary-100: #FFEACC;
     --secondary-200: #FFD699;
@@ -166,12 +191,16 @@ select {
     --secondary-700: #995B00;
     --secondary-800: #663D00;
     --secondary-900: #331E00;
+    --spacing: 1rem;
     font-family: var(--body-font);
 }
+/* ------------------------------------------------- 
+End Custom Properties
+------------------------------------------------- */
 
-/*End root */
-
-/* Typography */
+/* ------------------------------------------------- 
+4.0 General Typography
+------------------------------------------------- */
 h1,
 h2,
 h3,
@@ -197,10 +226,16 @@ h3 {
 p {
     line-height: 1.8;
 }
+/* ------------------------------------------------- 
+End General Typography
+------------------------------------------------- */
 
-/* End typography */
-
-/* Theme areas */
+/* ------------------------------------------------- 
+5.0 Areas
+------------------------------------------------- */
+/* --------
+5.1 Header
+-------- */
 .theme-header, .theme-footer {
     background: var(--primary-900);
     color: white;
@@ -221,10 +256,10 @@ padding: 1.5rem 0;
 }
 
 .brand {
-        color: white;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .brand:hover, .brand:active {
@@ -232,11 +267,11 @@ padding: 1.5rem 0;
 }
 
 .brand > span {
-        margin-left: 1rem;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-weight: 900;
-        letter-spacing: 0.35em;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.35em;
 }
 
 #menu-primary_navigation {
@@ -259,18 +294,18 @@ padding: 1.5rem 0;
 }
 
 .sub-menu {
-        position: absolute;
-        visibility: hidden;
-        z-index: 1;
-        background: var(--primary-900);
-        min-width: 15ch;
-        width: max-content;
-        padding: 1rem;
-        transform: translateX(-50%);
-        left: 50%;
-        top: calc(100% + 1.25rem);
-        text-align: center;
-        opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    background: var(--primary-900);
+    min-width: 15ch;
+    width: max-content;
+    padding: 1rem;
+    transform: translateX(-50%);
+    left: 50%;
+    top: calc(100% + 1.25rem);
+    text-align: center;
+    opacity: 0;
 }
 
 .sub-menu>*+* {
@@ -281,17 +316,22 @@ a[aria-expanded="true"] {
     color: red;
 }
 
+a[aria-expanded="true"] ~ .sub-menu {
+    visibility: visible;
+}
+
 .sub-menu:focus-within {
     visibility: visible;
     opacity: 1;
 }
-
+/* --------
+End Header
+-------- */
+/* --------
+5.2 Entry Content
+-------- */
 .entry-content {
     padding: 6rem 0;
-}
-
-.flow > *+* {
-    margin-top: var(--flow, 2rem);
 }
 
 .entry-content > * {
@@ -300,8 +340,55 @@ a[aria-expanded="true"] {
     margin-left: auto;
     margin-right: auto;
 }
+/* --------
+End Entry Content
+-------- */
+/* --------
+6.3 Footer
+-------- */
 
-/* GutenBerg */
+/* --------
+Emd Footer
+-------- */
+/* ------------------------------------------------- 
+End Areas
+------------------------------------------------- */
+/* ------------------------------------------------- 
+6.0 Utilities
+------------------------------------------------- */
+.flow>*+* {
+    margin-top: var(--flow, 2rem);
+}
+
+.flow-space-sm {
+    margin-top: (var(--spacing));
+    margin-top: (var(--spacing));
+}
+
+.flow-space-lg {
+    margin-top: calc(var(--spacing) * 4);
+    margin-bottom: calc(var(--spacing) * 4);
+}
+
+.flow-space-xl {
+    margin-top: calc(var(--spacing) * 6);
+    margin-bottom: calc(var(--spacing) * 6);
+}
+
+.alignsmall {
+    max-width: var(--width-small);
+    width: 90vw;
+}
+
+.alignmedium {
+    max-width: var(--width-medium);
+    width: 90vw;
+}
+
+.alignlarge {
+    max-width: var(--width-large);
+    width: 90vw;
+}
 
 .alignwide {
     max-width: var(--width-xlarge);
@@ -309,7 +396,7 @@ a[aria-expanded="true"] {
 }
 
 .alignfull {
-    max-width: 100vw;
+    max-width: var(--width-full);
     width: 100%;
 }
 
@@ -321,18 +408,13 @@ a[aria-expanded="true"] {
     text-align: right;
 }
 
-.wp-block-separator {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-}
+/* ------------------------------------------------- 
+End Utilities
+------------------------------------------------- */
 
-/* Top of Page Blocks */
-
-.banner-block:first-child {
-    margin-top: -6rem;
-}
-
-/* Button Styles */
+/* ------------------------------------------------- 
+7.0 Buttons
+------------------------------------------------- */
 .btn {
     display: inline-block;
     padding: 1rem;
@@ -344,6 +426,27 @@ a[aria-expanded="true"] {
 }
 
 .btn:active,
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
     background: var(--primary-700);
 }
+
+/* ------------------------------------------------- 
+End Buttons
+------------------------------------------------- */
+
+/* ------------------------------------------------- 
+8.0 Gutenberg Conditionals
+------------------------------------------------- */
+.wp-block-separator {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Top of Page Blocks */
+.first-block-negative-margin:first-child {
+    margin-top: -6rem;
+}
+/* ------------------------------------------------- 
+End Gutenberg Conditionals
+------------------------------------------------- */
