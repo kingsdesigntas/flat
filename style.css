@@ -371,6 +371,14 @@ End Header
     margin-left: auto;
     margin-right: auto;
 }
+
+.entry-content>ul {
+    width: 80%;
+}
+
+.entry-content>ul>*+* {
+    margin-top: var(--flow, 1.25rem);
+}
 /* --------
 End Entry Content
 -------- */
@@ -424,7 +432,7 @@ End Areas
 
 .flow-space-sm {
     margin-top: (var(--spacing));
-    margin-top: (var(--spacing));
+    margin-bottom: (var(--spacing));
 }
 
 .flow-space-lg {
@@ -435,6 +443,18 @@ End Areas
 .flow-space-xl {
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
+}
+
+.flow-top-sm {
+    margin-top: (var(--spacing));
+}
+
+.flow-top-lg {
+    margin-top: calc(var(--spacing) * 4);
+}
+
+.flow-top-xl {
+    margin-top: calc(var(--spacing) * 6);
 }
 
 .alignsmall {

@@ -372,7 +372,7 @@ End Areas
 
 .flow-space-sm {
     margin-top: (var(--spacing));
-    margin-top: (var(--spacing));
+    margin-bottom: (var(--spacing));
 }
 
 .flow-space-lg {
@@ -383,6 +383,18 @@ End Areas
 .flow-space-xl {
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
+}
+
+.flow-top-sm {
+    margin-top: (var(--spacing));
+}
+
+.flow-top-lg {
+    margin-top: calc(var(--spacing) * 4);
+}
+
+.flow-top-xl {
+    margin-top: calc(var(--spacing) * 6);
 }
 
 .alignsmall {
@@ -562,6 +574,37 @@ h6 {
     margin-top: 2rem!important;
 }
 
+.is-root-container>*+* {
+    margin-top: 2rem !important;
+}
+
+.flow-space-sm {
+    margin-top: (var(--spacing)) !important;
+    margin-bottom: (var(--spacing)) !important;
+}
+
+.flow-space-lg {
+    margin-top: calc(var(--spacing) * 4) !important;
+    margin-bottom: calc(var(--spacing) * 4) !important;
+}
+
+.flow-space-xl {
+    margin-top: calc(var(--spacing) * 6) !important;
+    margin-bottom: calc(var(--spacing) * 6) !important;
+}
+
+.flow-top-sm {
+    margin-top: (var(--spacing)) !important;
+}
+
+.flow-top-lg {
+    margin-top: calc(var(--spacing) * 4) !important;
+}
+
+.flow-top-xl {
+    margin-top: calc(var(--spacing) * 6) !important;
+}
+
 /* Top of Page Blocks */
 [data-title="Banner Block"]:first-child,
 [data-title="Inner Content Section"]:first-child {
@@ -577,6 +620,13 @@ Fixes
 /* List Styling Added when it shouldn't be */
 .post-grid-block>ul {
     list-style: none !important;
+}
+[data-type="core/list"] {
+    width: 80%;
+}
+
+[data-type="core/list"]>*+* {
+    margin-top: var(--flow, 1.25rem);
 }
 
 /* Genesis Custom Block Images being streteched */
