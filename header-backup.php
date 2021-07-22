@@ -11,25 +11,6 @@
 </head>
 
 <body <?php body_class();?>>
-    <div id="curtain-menu">
-        <div class="curtain-button-placer">
-            <button id="close-curtain-button" class="curtain-menu-button" aria-label="close navigation menu"
-                onclick="closeCurtain()">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                    stroke-linejoin="round" height="1.5rem" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <div id="curtain-menu-container">
-            <nav>
-                <?php if (has_nav_menu('primary_navigation')) {
-    echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-}?>
-            </nav>
-        </div>
-    </div>
     <header class="theme-header">
         <div class="header-content">
             <a aria-label="brand logo" href="<?php echo home_url() ?>" class="brand">
@@ -52,16 +33,11 @@
                 </svg>
                 <span>Flat</span>
             </a>
-            <button id="open-curtain-button" aria-label="open navigation menu" class="curtain-menu-button"
-                onclick="openCurtain()">
-                <svg fill="currentColor" height="1.5rem" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                        <rect x="6" y="22" width="36" height="4"></rect>
-                        <rect x="6" y="10" width="36" height="4"></rect>
-                        <rect x="6" y="34" width="36" height="4"></rect>
-                    </g>
-                </svg>
-            </button>
+            <nav>
+                <?php if (has_nav_menu('primary_navigation')) {
+    echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+}?>
+            </nav>
         </div>
     </header>
     <div id="page">

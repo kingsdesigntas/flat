@@ -66,6 +66,10 @@ select {
     font: inherit;
 }
 
+button {
+    padding: 0;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -250,7 +254,7 @@ padding: 1.5rem 0;
 }
 
 .header-content {
-    max-width: 80rem;
+    max-width: var(--width-xlarge);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -275,9 +279,55 @@ padding: 1.5rem 0;
     letter-spacing: 0.35em;
 }
 
-#menu-primary_navigation {
+.curtain-menu-button {
     display: flex;
-    gap: 1rem;
+    padding: 0.25rem;
+}
+
+#curtain-menu {
+    visibility: hidden;
+    position: fixed;
+    z-index: 10001;
+    background: var(--primary-800);
+    color: white;
+    height: 100vh;
+    width: 0;
+    transition: visibility,
+    width 0.3s ease-out;
+}
+
+.curtain-button-placer {
+    max-width: var(--width-xlarge);
+    width: var(--content-width);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+    z-index: 10002;
+    top: 1.6em;
+    right:0.45rem;
+}
+
+#close-curtain-button {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+#curtain-menu-container {
+    opacity: 0;
+    width: var(--content-width);
+    max-width: var(--width-medium);
+    margin: auto;
+    padding: 3rem 0;
+    transition: opacity 0.3s ease;
+}
+
+#curtain-menu-container ul {
+    font-size: 1.25rem;
+}
+
+#curtain-menu-container ul > *+* {
+    margin-top: 0.6rem;
 }
 
 .menu-item {
@@ -285,7 +335,7 @@ padding: 1.5rem 0;
     position: relative;
 }
 
-.menu-item>a {
+.menu-item a {
     text-decoration: none;
     color: white;
 }
@@ -294,37 +344,13 @@ padding: 1.5rem 0;
     text-decoration: underline 1px solid var(--primary-200);
 }
 
-.sub-menu {
-    position: absolute;
-    visibility: hidden;
-    z-index: 1;
-    background: var(--primary-900);
-    min-width: 15ch;
-    width: max-content;
-    padding: 1rem;
-    transform: translateX(-50%);
-    left: 50%;
-    top: calc(100% + 1.25rem);
-    text-align: center;
-    opacity: 0;
+#curtain-menu-container .sub-menu {
+    margin-left: 1rem;
+    margin-top: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--secondary-300);
 }
 
-.sub-menu>*+* {
-    margin-top: 0.75rem;
-}
-
-a[aria-expanded="true"] {
-    color: red;
-}
-
-a[aria-expanded="true"] ~ .sub-menu {
-    visibility: visible;
-}
-
-.sub-menu:focus-within {
-    visibility: visible;
-    opacity: 1;
-}
 /* --------
 End Header
 -------- */
@@ -430,6 +456,21 @@ End Utilities
 .btn:hover,
 .btn:focus {
     background: var(--primary-700);
+}
+
+.curtain-menu-button {
+    display: flex;
+    padding: 0.25rem;
+    border: none;
+    background:var(--gray-50);
+    color: var(--gray-800);
+    transition: background 0.2s;
+}
+
+.curtain-menu-button:active,
+.curtain-menu-button:hover,
+.curtain-menu-button:focus {
+    background: var(--gray-100);
 }
 
 /* ------------------------------------------------- 

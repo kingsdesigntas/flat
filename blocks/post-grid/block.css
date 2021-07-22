@@ -33,7 +33,8 @@
     text-underline-offset: 3px;
 }
 
-.post-grid-item a:hover,a:focus {
+.post-grid-item a:hover,
+.post-grid-item a:focus {
     color: var(--primary-600);
     text-decoration: underline solid 2px var(--secondary-200);
 }
