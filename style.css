@@ -216,20 +216,24 @@ h6 {
     font-weight: 700;
 }
 
-h1 {
-    font-size: clamp(2rem, 1.6vw + 1.5rem, 2.7rem);
+h1, .font-xxl {
+    font-size: clamp(2.25rem, 1.6vw + 1.75rem, 3rem);
 }
 
-h2 {
+h2, .font-xl {
     font-size: clamp(1.75rem, 1.3vw + 1.3rem, 2.5rem);
 }
 
-h3 {
+h3, .font-lg {
     font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
 }
 
+h4, .font-md {
+    font-size: clamp(1rem, 1.1vw + 1rem, 1.5rem);
+}
+
 p {
-    line-height: 1.8;
+    line-height: 1.9;
 }
 /* ------------------------------------------------- 
 End General Typography
@@ -371,9 +375,40 @@ End Header
 End Entry Content
 -------- */
 /* --------
-6.3 Footer
+5.3 Footer
 -------- */
+.footer-content {
+    display: grid;
+    padding: 6rem 0;
+    max-width: var(--width-xlarge);
+    gap: 2rem;
+}
 
+.footer-content>.flow ul>*+* {
+    margin-top: 0.75rem;
+}
+
+.footer-content>.flow {
+    text-align: center;
+}
+
+@media screen and (min-width: 36rem) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-content>.flow {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-content>.flow {
+        text-align: center;
+    }
+}
 /* --------
 Emd Footer
 -------- */

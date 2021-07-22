@@ -9,8 +9,30 @@
 ?>
 </div> <!-- #page ends -->
 <footer class="theme-footer">
+
     <div class="footer-content">
-        <h3>I'm the footer</h3>
+        <div class="flow" style="--flow: 1rem">
+            <p class="font-md" style="font-weight:bold">Put the logo here</p>
+        </div>
+        <div class="flow" style="--flow: 1rem">
+            <p class="font-md" style="font-weight:bold">Footer Menu One</p>
+            <nav>
+                <?php if (has_nav_menu('footer_one')) {
+                     echo wp_nav_menu(['theme_location' => 'footer_one', 'menu_class' => 'nav']);
+                }?>
+            </nav>
+        </div>
+        <div class="flow" style="--flow: 1rem">
+            <p class="font-md" style="font-weight:bold">Footer Menu Two</p>
+            <nav>
+                <?php if (has_nav_menu('footer_two')) {
+                     echo wp_nav_menu(['theme_location' => 'footer_two', 'menu_class' => 'nav']);
+                }?>
+            </nav>
+        </div>
+        <div class="flow" style="--flow: 1rem">
+            <p class="font-md" style="font-weight:bold">Column Heading</p>
+        </div>
     </div>
 </footer>
 <script>
@@ -19,18 +41,20 @@ var curtainContent = document.querySelector('#curtain-menu-container');
 var openCurtainButton = document.querySelector('#open-curtain-button');
 var closeCurtainButton = document.querySelector('#close-curtain-button');
 var lastCurtainLink = document.querySelector('#menu-primary_navigation > li:last-child a:last-of-type');
+console.log(lastCurtainLink);
 
 closeCurtainButton.addEventListener("keydown", function(event) {
     setTimeout(() => {
         if (event.shiftKey && event.keyCode == 9) {
             lastCurtainLink.focus();
+            console.log("I should focus the last link");
         }
-    }, 10);
+    }, 110);
 })
 
 lastCurtainLink.addEventListener("keydown", function(event) {
     setTimeout(() => {
-        if (event.keyCode == 9 && !event.shiftKey) {
+        if (!event.shiftKey && event.keyCode == 9) {
             closeCurtainButton.focus();
         }
     }, 10);
