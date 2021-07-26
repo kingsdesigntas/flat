@@ -1,0 +1,10 @@
+.auto-grid-block {
+    display: grid;
+}
+
+.auto-grid-block>* {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    ;
+}
