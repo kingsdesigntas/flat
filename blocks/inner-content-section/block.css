@@ -35,16 +35,3 @@
     max-width: var(--width-full);
     width: 100%;
 }
-
-.section-top-shape {
-    align-self: flex-start;
-    height: 6rem;
-    padding-bottom: 2rem;
-    width: 100%;
-}
-
-.section-bottom-shape {
-    align-self: flex-end;
-    height: 6rem;
-    width: 100%;
-}
