@@ -18,28 +18,34 @@
         <?php switch (block_value('heading-level')) {
     case 1:
         if ($showHeading):
-        ?><h1 style="color:<?php block_field('heading-color');?>"><?php echo $heading ?></h1>
+        ?><h1 data-sal="slide-up" data-sal-duration="600" style="color:<?php block_field('heading-color');?>">
+            <?php echo $heading ?></h1>
         <?php endif;
         break;
     case 2:
         if ($showHeading):
-        ?><h2 style="color:<?php block_field('heading-color');?>"><?php echo $heading ?></h2>
+        ?><h2 data-sal="slide-up" data-sal-duration="600" style="color:<?php block_field('heading-color');?>">
+            <?php echo $heading ?></h2>
         <?php endif;
         break;
     case 3:
         if ($showHeading):
-        ?><h3 style="color:<?php block_field('heading-color');?>"><?php echo $heading ?></h3>
+        ?><h3 data-sal="slide-up" data-sal-duration="600" style="color:<?php block_field('heading-color');?>">
+            <?php echo $heading ?></h3>
         <?php endif;
     default:
         if ($showHeading):
-        ?><h2 style=" color:<?php block_field('heading-color');?>"><?php echo $heading ?></h2>
+        ?><h2 data-sal="slide-up" data-sal-duration="600" style="color:<?php block_field('heading-color');?>">
+            <?php echo $heading ?></h2>
         <?php endif;
 };
 if ($showCopy): ?>
-        <div style="color:<?php block_field('copy-color');?>"><?php block_field('copy');?></div>
+        <div data-sal="slide-up" data-sal-duration="600" style="color:<?php block_field('copy-color');?>">
+            <?php block_field('copy');?></div>
         <?php endif;
 if ($showButton): ?>
-        <a class="btn-secondary" href="<?php block_field('button-url');?>"><?php block_field('button-text');?></a>
+        <a data-sal="slide-up" data-sal-duration="600" class="btn-secondary"
+            href="<?php block_field('button-url');?>"><?php block_field('button-text');?></a>
         <?php endif;?>
     </div>
     <?php endif;?>

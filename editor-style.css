@@ -684,6 +684,7 @@ Set Block Widths
     [data-title="Services Grid"],
     [data-title="News Grid"],
     [data-title="Board Members"],
+    [data-title="Image & Text"],
     .alignwide {
         max-width: var(--width-xlarge);
         width: 90%;

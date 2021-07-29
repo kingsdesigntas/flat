@@ -11,11 +11,11 @@
 <footer class="theme-footer">
 
     <div class="footer-content">
-        <div class="flow" style="--flow: 1rem">
+        <div data-sal="slide-up" data-sal-duration="600" class="flow" style="--flow: 1rem">
             <p class="font-sm heading-font" style="font-weight:bold">About Us</p>
             <?php dynamic_sidebar('footer-col-one');?>
         </div>
-        <div class="flow" style="--flow: 1rem">
+        <div data-sal="slide-up" data-sal-duration="600" class="flow" style="--flow: 1rem">
             <p class="font-sm heading-font" style="font-weight:bold">Sitemap</p>
             <nav>
                 <?php if (has_nav_menu('footer_one')) {
@@ -23,11 +23,11 @@
 }?>
             </nav>
         </div>
-        <div class="flow" style="--flow: 1rem">
+        <div data-sal="slide-up" data-sal-duration="600" class="flow" style="--flow: 1rem">
             <p class="font-sm heading-font" style="font-weight:bold">Contact Us</p>
             <?php dynamic_sidebar('footer-col-three');?>
         </div>
-        <div class="flow" style="--flow: 1rem">
+        <div data-sal="slide-up" data-sal-duration="600" class="flow" style="--flow: 1rem">
             <p class="font-sm heading-font" style="font-weight:bold">Information</p>
 
             <nav>

@@ -34,23 +34,15 @@
     <header class="theme-header">
         <div class="header-content">
             <a aria-label="brand logo" href="<?php echo home_url() ?>" class="brand">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 420 420">
-                    <defs>
-                        <linearGradient id="a" x1="308.4" x2="463.4" y1="305.6" y2="305.6"
-                            gradientTransform="translate(-527 -390) scale(2.7087)" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fff" />
-                            <stop offset="1" stop-color="#cac5c4" />
-                        </linearGradient>
-                    </defs>
-                    <g stroke-linecap="round" stroke-linejoin="round">
-                        <g fill="#77a4bb">
-                            <path
-                                d="M43 331v19l27 27h71zM377 279l-46 98h19l27-27zM279 43l98 46V70l-27-27zM70 43L43 70v71l46-98z" />
-                        </g>
-                        <path fill="url(#a)" d="M462 228l-36 13-118 253 13 36 253 118 36-13 118-253-13-36z"
-                            transform="translate(-308 -228)" />
-                    </g>
+                <svg width="40" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M43 331V350L70 377H141L43 331ZM377 279L331 377H350L377 350V279ZM279 43L377 89V70L350 43H279ZM70 43L43 70V141L89 43H70Z"
+                        fill="#BCC743" />
+                    <path
+                        d="M8.10564 266.364L123.479 18.9954L153.636 8.10564L401.005 123.479L411.894 153.636L296.521 401.005L266.364 411.894L18.9954 296.521L8.10564 266.364Z"
+                        stroke="#FCFDEE" stroke-width="15" />
                 </svg>
+
                 <span>Flat</span>
             </a>
             <button id="open-curtain-button" aria-label="open navigation menu" class="curtain-menu-button"

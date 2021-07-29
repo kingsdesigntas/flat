@@ -538,7 +538,7 @@ End Utilities
 a.btn {
     display: inline-block;
     padding: 1rem;
-    background: var(--primary-800);
+    background: var(--primary-600);
     color: white;
     width: max-content;
     text-decoration: none;
@@ -556,7 +556,7 @@ a.btn:focus {
 a.btn-secondary {
     display: inline-block;
     padding: 1rem;
-    background: var(--secondary-400);
+    background: var(--secondary-600);
     color: white;
     width: max-content;
     text-decoration: none;
@@ -567,7 +567,7 @@ a.btn-secondary {
 a.btn-secondary:active,
 a.btn-secondary:hover,
 a.btn-secondary:focus {
-    background: var(--secondary-600);
+    background: var(--secondary-700);
     color: white;
 }
 
