@@ -1,0 +1,32 @@
+.content-image-split-block {
+    display: grid;
+}
+
+.content-image-split-block > * {
+    max-width: 100vw;
+}
+
+@media screen and (min-width: 48rem) {
+.split-block-left {
+grid-template-columns: 1fr 2fr;
+}
+
+.split-block-right {
+    grid-template-columns: 2fr 1fr;
+}
+}
+
+.content-image-split-content {
+    padding: 4rem;
+}
+
+.content-image-split-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-image-split-image img {
+    object-fit: cover;
+    overflow: hidden;
+}
+

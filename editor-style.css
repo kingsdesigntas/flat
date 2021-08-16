@@ -692,7 +692,8 @@ Set Block Widths
 
     [data-title="Banner Block"],
     [data-title="Home Banner"],
-    [data-title="Inner Content Section"] {
+    [data-title="Inner Content Section"],
+    [data-title="Content & Image Split"] {
         max-width: 100%;
     }
 
